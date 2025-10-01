@@ -15,20 +15,29 @@ main.cpp -> здесь основной код запуска, тут задаё
 
 В командной строке в той папке, где хотите
 
-``` git clone https://github.com/Znakous/Sortings_tester ```
+```
+git clone https://github.com/Znakous/Sortings_tester
+```
 
 2) Переходим в папку проекта
 
-``` cd Sortings_tester ```
+```
+cd Sortings_tester
+```
 
 3) Компиляция
 
 Любым компилятором компилируете main.cpp и будет вам счастье
 
-``` g++ main.cpp && ./a.out ``` <- macos
+``` 
+g++ main.cpp && ./a.out
+``` 
+<- macos
 
-``` g++ main.cpp && .\a.exe ``` <- windows
+```
+g++ main.cpp && .\a.exe 
+```
+<- windows
 
-(вместо g++ подставьте имя вашего компилятора)
-
-[либо откройте папку с main.cpp как проект в вашей IDE и скомпилируйте]
+Вместо g++ подставьте имя вашего компилятора
+${\color {green} [либо \ откройте \  папку \ с \ main.cpp \ как \ проект \ в \ вашей \ IDE \ и \ скомпилируйте \ её \ стандартными \ средствами]}$
