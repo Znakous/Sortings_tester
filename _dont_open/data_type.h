@@ -1,9 +1,6 @@
 #pragma once
 
-#include <string>
-#include <iostream>
-#include <random>
-
+#include "../include_me.h"
 
 struct Counter {
     static int assigns;
@@ -38,7 +35,28 @@ struct Counter {
         return val >= other.val;
     }
 
-    Counter operator++(int) {
+    template<typename T>
+    bool operator<(T other) {
+        ++comparisons;
+        return val < other;
+    }
+    template<typename T>
+    bool operator>(T other) {
+        ++comparisons;
+        return val > other;
+    }
+    template<typename T>
+    bool operator<=(T other) {
+        ++comparisons;
+        return val <= other;
+    }
+    template<typename T>
+    bool operator>=(T other) {
+        ++comparisons;
+        return val >= other;
+    }
+
+    Counter operator++(signed) {
         auto cur = *this;
         ++(*this);
         return cur;
@@ -52,6 +70,11 @@ struct Counter {
         ++incrs_decrs;
         --val;
         return *this;
+    }
+    Counter operator--(signed) {
+        auto cur = *this;
+        --(*this);
+        return cur;
     }
 
     template<typename T>
@@ -93,9 +116,11 @@ struct Counter {
     operator int() {
         return val;
     }
-};
 
-#define Int Counter
+    operator std::string() {
+        return std::to_string(val);
+    }
+};
 
 int Counter::assigns = 0;
 int Counter::comparisons = 0;
@@ -103,6 +128,9 @@ int Counter::incrs_decrs = 0;
 int Counter::plus_minus = 0;
 int Counter::multiply = 0;
 int Counter::divide = 0;
+
+#define Int Counter
+#define int Counter
 
 
 

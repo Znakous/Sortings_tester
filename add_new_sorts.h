@@ -1,8 +1,7 @@
 #pragma once
 
-#include <string>
 
-#include "data_type.h"
+#include "_dont_open/data_type.h"
 
 
 // включите сюда свои сортировки
@@ -18,7 +17,7 @@ enum SortType {
     Insert,
 }; // сюда имена
 
-#include "_dont_open_2.h" // не убирать
+#include "_dont_open/mapping.h" // не убирать
 
 
 void Prep() {

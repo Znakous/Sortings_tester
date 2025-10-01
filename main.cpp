@@ -1,10 +1,7 @@
-#include <iostream>
-#include <chrono>
-
-#include "execute.h"
+#include "_dont_open/execute.h"
 
 
-int main() {
+signed main() {
     Prep();
     
 
@@ -18,7 +15,9 @@ int main() {
     std::vector<Int> v; // вектор, который будем сортировать
     
 
-    // Например
+
+
+    // Пример задания вектора
     v.resize(8000);
     for (int i=0; i<v.size(); ++i) {
         v[i] = distrib(gen);

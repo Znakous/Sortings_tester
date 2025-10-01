@@ -1,13 +1,7 @@
 #pragma once
 
-#include "quick_lomuto.h"
-#include "quick_hoar.h"
-#include "merge.h"
-#include "insertion.h"
-
-
-#include "add_new_sorts.h"
-#include "_dont_open.h"
+#include "../add_new_sorts.h"
+#include "zips.h"
 
 
 
@@ -54,13 +48,6 @@ void Execute(std::vector<SortType>& calls, std::vector<Int>& example) {
     CoutHead();
     num_of_elements = example.size();
     std::vector<std::vector<Int>> v(calls.size(), example);
-    
-    for (int i=0; i<num_of_elements; ++i) {
-        int value = distrib(gen); // сюда кладётся i-й элемент
-        // int value = distrib(gen); например вот так он заполнится случайными числами
-        for (auto& el : v) el[i] = value;
-    }
-
 
     for (int i=0; i<calls.size(); ++i) {
         Sort(v[i], calls[i]);
